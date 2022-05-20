@@ -1,0 +1,76 @@
+{
+  "name": "quasar-boilerplate-v2",
+  "version": "0.0.1",
+  "description": "A Quasar Project",
+  "productName": "quasar-boilerplate-v2",
+  "author": "robby <robby.wu@linkage-retail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env DOTENV_CONFIG_PATH=./.env.development quasar dev",
+    "build:test": "cross-env DOTENV_CONFIG_PATH=./.env.test quasar build",
+    "build:prod": "cross-env DOTENV_CONFIG_PATH=./.env.production quasar build",
+    "eslint": "eslint --ext .ts,.js,.vue src",
+    "eslint:fix": "eslint --ext .ts,.js,.vue src --fix",
+    "stylelint": "stylelint src/**/**/**/*.{vue,css,sass,scss}",
+    "stylelint:fix": "stylelint src/**/**/**/*.{vue,css,sass,scss} --fix",
+    "lint:all": "npm run eslint && npm run stylelint",
+    "lint:all:fix": "npm run eslint:fix && npm run stylelint:fix",
+    "format": "prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore",
+    "prepare": "husky install"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint:all:fix && npm run format"
+    }
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.0.0",
+    "axios": "^0.21.1",
+    "core-js": "^3.6.5",
+    "lodash": "^4.17.21",
+    "pinia": "^2.0.11",
+    "pinia-plugin-persistedstate": "^1.5.2",
+    "quasar": "^2.6.0",
+    "vue": "^3.0.0",
+    "vue-i18n": "^9.0.0",
+    "vue-router": "^4.0.0"
+  },
+  "devDependencies": {
+    "@quasar/app-webpack": "^3.0.0",
+    "@types/lodash": "^4.14.182",
+    "@types/node": "^12.20.21",
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.1",
+    "eslint": "^8.10.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-vue": "^8.5.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^12.1.2",
+    "prettier": "^2.5.1",
+    "quasar-app-extension-linkage-cms-ui": "^2.0.2",
+    "stylelint": "^13.8.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-sass-guidelines": "^7.1.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.18.0"
+  },
+  "browserslist": [
+    "last 10 Chrome versions",
+    "last 10 Firefox versions",
+    "last 4 Edge versions",
+    "last 7 Safari versions",
+    "last 8 Android versions",
+    "last 8 ChromeAndroid versions",
+    "last 8 FirefoxAndroid versions",
+    "last 10 iOS versions",
+    "last 5 Opera versions"
+  ],
+  "engines": {
+    "node": ">= 14.18.3",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
+}
